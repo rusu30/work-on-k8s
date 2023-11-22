@@ -1,0 +1,118 @@
+Let's start from the basics.
+
+What is Kubernetes?
+Kubernetes, often abbreviated as K8s, is an open-source container orchestration platform. It automates the deployment, scaling, and management of containerized applications. It was originally developed by Google and is now maintained by the Cloud Native Computing Foundation (CNCF).
+
+In simpler terms, Kubernetes helps you manage and deploy containerized applications at scale. It abstracts away the underlying infrastructure, providing a consistent and reliable way to deploy, scale, and operate applications across different environments.
+
+Key Concepts:
+Pods:
+
+The basic unit of deployment in Kubernetes.
+A pod can contain one or more containers that share the same network namespace and storage.
+Containers within a pod communicate with each other using localhost.
+
+Nodes:
+
+A node is a physical or virtual machine that runs your applications.
+Nodes are part of a cluster and are managed by the control plane.
+
+Cluster:
+
+A cluster is a set of nodes grouped together to run containerized applications.
+The control plane manages the cluster.
+
+Control Plane:
+
+The control plane manages the cluster.
+Components include the API server, etcd, controller manager, and scheduler.
+
+Service:
+
+An abstraction that defines a set of pods and a policy by which to access them.
+Enables load balancing and service discovery.
+
+Namespace:
+
+A way to divide cluster resources between multiple users or projects.
+Basic Kubernetes Commands:
+
+kubectl:
+
+kubectl is the command-line tool for interacting with Kubernetes clusters.
+Cluster Info:
+
+Check cluster details:
+bash
+
+kubectl cluster-info
+
+Nodes:
+
+View nodes in the cluster:
+bash
+
+kubectl get nodes
+
+Pods:
+
+List all pods in the default namespace:
+bash
+
+kubectl get pods
+
+Create a Pod:
+
+Create a pod using a YAML file (e.g., pod.yaml):
+bash
+
+kubectl apply -f pod.yaml
+Services:
+
+Expose a pod as a service:
+bash
+
+kubectl expose pod <pod-name> --type=NodePort --port=8080
+Scale Pods:
+
+Scale the number of replicas of a deployment:
+bash
+
+kubectl scale deployment <deployment-name> --replicas=3
+Logs:
+
+View logs of a pod:
+bash
+
+kubectl logs <pod-name>
+Configurations:
+
+View configurations (e.g., ConfigMaps, Secrets):
+bash
+
+kubectl get configmaps
+kubectl get secrets
+Delete Resources:
+
+Delete a pod, service, or deployment:
+bash
+
+kubectl delete pod <pod-name>
+kubectl delete service <service-name>
+kubectl delete deployment <deployment-name>
+Namespace:
+
+Create a namespace:
+bash
+kubectl create namespace <namespace-name>
+Contexts:
+
+Switch between clusters or namespaces:
+bash
+
+kubectl config use-context <context-name>
+
+
+These are just the basics to get you started. As you progress, you'll delve into more advanced features like deployments, stateful sets, 
+ingress controllers, and more. The key is to practice and experiment with these commands in a controlled environment. 
+You can find detailed documentation on the official Kubernetes documentation.
